@@ -1,10 +1,11 @@
+# main.py
 import streamlit as st
-import requests
-from volume_stock import find_stocks
 import config
+from volume_stock import find_stocks
+from dataframe import stock_information
+
 
 def main():
-
     st.set_page_config(
         page_title="Stock Prediction Model",
         page_icon="📈",
@@ -12,11 +13,9 @@ def main():
         initial_sidebar_state="collapsed",
     )
 
-    # Use Markdown for a more styled title
     st.markdown("# 📈 Stock Prediction Model")
     st.markdown("___")
 
-    # Fetch the most active stocks
     stocks = find_stocks()
 
     if 'selected_stock' not in st.session_state:
@@ -27,7 +26,6 @@ def main():
     with col1:
         st.markdown("### Select a Stock")
         st.session_state.selected_stock = st.selectbox("", stocks)
-        # Globalize the selected value into a config file
         config.selected_stock = st.session_state.selected_stock
 
     with col2:
@@ -35,8 +33,11 @@ def main():
             st.markdown("### Selected Stock")
             st.write(f"🔹 {st.session_state.selected_stock}")
 
-
     st.markdown("---")
+    st.markdown("## Stock Description")
+    stock_info = stock_information()
+    st.markdown(stock_info)
+
     st.markdown("### Additional Features Coming Soon!")
     st.markdown("Stay tuned for more interactive features and insights on your selected stock.")
 
