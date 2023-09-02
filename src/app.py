@@ -1,7 +1,7 @@
 import streamlit as st
 import config
 from volume_stock import find_stocks
-from dataframe import stock_information
+from stockInformation import stock_information
 
 def main():
     st.set_page_config(
@@ -36,7 +36,7 @@ def main():
             st.markdown("### No Stock Selected")
 
     st.markdown("---")
-    st.markdown("## Stock Description")
+    st.markdown(f"## {selected_stock}  Description")
 
     stock_info = stock_information()
     if st.session_state.selected_stock and isinstance(stock_info, dict):
@@ -52,6 +52,8 @@ def main():
 
     st.markdown("### Additional Features Coming Soon!")
     st.markdown("Stay tuned for more interactive features and insights on your selected stock.")
+
+
 
 if __name__ == "__main__":
     main()
