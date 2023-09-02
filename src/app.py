@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from volume_stock import find_stocks
+import config
 
 def main():
 
@@ -26,6 +27,8 @@ def main():
     with col1:
         st.markdown("### Select a Stock")
         st.session_state.selected_stock = st.selectbox("", stocks)
+        # Globalize the selected value into a config file
+        config.selected_stock = st.session_state.selected_stock
 
     with col2:
         if st.session_state.selected_stock:
