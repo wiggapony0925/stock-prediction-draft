@@ -33,10 +33,15 @@ def main():
             st.markdown("### Selected Stock")
             st.write(f"🔹 {st.session_state.selected_stock}")
 
+#         STOCK INFORMATION
     st.markdown("---")
     st.markdown("## Stock Description")
     stock_info = stock_information()
-    st.markdown(stock_info)
+
+    if stock_info:
+        for key, value in stock_info.items():
+            st.write(f"**{key}:** {value}")
+
 
     st.markdown("### Additional Features Coming Soon!")
     st.markdown("Stay tuned for more interactive features and insights on your selected stock.")
