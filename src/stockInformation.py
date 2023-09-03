@@ -4,7 +4,7 @@ import config
 def stock_information():
     selected_stock = config.selected_stock
     if selected_stock is None:
-        return "No stock selected"
+        return None
 
     get_information = yahooFinance.Ticker(selected_stock)
 
