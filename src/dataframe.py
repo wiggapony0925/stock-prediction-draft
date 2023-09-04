@@ -1,7 +1,7 @@
 import yfinance as yf
 import streamlit as st
 from datetime import datetime, timedelta
-from config import DEFAULT_START_DATE, DEFAULT_END_DATE
+from config import DEFAULT_START_DATE, DEFAULT_END_DATE, selected_stock
 
 def date_range():
     st.markdown("## Please choose a range of dates for the data frame")
