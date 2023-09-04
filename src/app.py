@@ -2,6 +2,7 @@ import streamlit as st
 from volume_stock import find_stocks
 from stockInformation import stock_information
 from dataframe import fetch_stock_data, display_stock_data, date_range
+from settings import settings_sidebar
 import config
 
 
@@ -16,6 +17,7 @@ def main():
     st.markdown("# 📈 Stock Prediction Model")
     st.markdown("___")
 
+    settings_sidebar()
     stocks = find_stocks()
 
     if 'selected_stock' not in st.session_state:
