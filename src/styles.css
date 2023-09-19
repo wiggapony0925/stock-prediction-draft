@@ -4,10 +4,16 @@
 body.dark-theme {
     background-color: #1E1E1E;
     color: #FFFFFF;
-}
+}ss
 
 /* Light Theme */
 body.light-theme {
     background-color: #FFFFFF;
     color: #000000;
+}
+
+body.tan-theme {
+background-color: #dddddd;
+color: #00000;
+
 }

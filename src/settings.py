@@ -1,6 +1,6 @@
 # settings_component.py
-
 import streamlit as st
+
 
 def settings_sidebar():
     st.sidebar.markdown("## Settings")
