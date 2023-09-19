@@ -98,5 +98,10 @@ def main():
                 unsafe_allow_html=True)
 
 
+    #STOCK PREDICTION SECITON
+    st.markdown(f"## STOCK PREDICTION FOR: {selected_stock}")
+
+
+
 if __name__ == "__main__":
     main()

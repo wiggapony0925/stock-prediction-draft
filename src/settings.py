@@ -19,3 +19,6 @@ def settings_sidebar():
         st.markdown("<link rel='stylesheet' href='styles.css' class='light-theme'>", unsafe_allow_html=True)
 
     # Other settings can be added here
+
+    #zoom settings
+    zoom_settings = st.sidebar.slider("Adjust zoom ", min_value=12, max_value=360, value=16)
